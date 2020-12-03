@@ -15,6 +15,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#ifdef ESP_PLATFORM
+#include "internal/espidf_compat.h"
+static const char* TAG = "Neo_Esp32_i2s";
+#endif
+
 #if defined(ARDUINO_ARCH_ESP32)
 
 #include <string.h>
@@ -44,7 +49,10 @@
 #include "driver/i2s.h"
 #include "driver/dac.h"
 #include "Esp32_i2s.h"
+
+#ifndef ESP_PLATFORM
 #include "esp32-hal.h"
+#endif
 
 #if ESP_IDF_VERSION_MAJOR<4
 #define I2S_BASE_CLK (160000000L)

@@ -43,7 +43,11 @@ Esp32-hal-rmt.h
 Esp32-hal-rmt.c
 */
 
+#ifdef ESP_PLATFORM
+#include "internal/espidf_compat.h"
+#else
 #include <Arduino.h>
+#endif
 
 extern "C"
 {

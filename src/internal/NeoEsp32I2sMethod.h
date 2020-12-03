@@ -30,7 +30,12 @@ License along with NeoPixel.  If not, see
 
 extern "C"
 {
+#ifdef ESP_PLATFORM
+#include "internal/espidf_compat.h"
+#else
 #include <Arduino.h>
+#endif
+
 #include "Esp32_i2s.h"
 }
 

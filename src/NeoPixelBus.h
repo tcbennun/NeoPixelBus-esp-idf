@@ -25,7 +25,11 @@ License along with NeoPixel.  If not, see
 -------------------------------------------------------------------------*/
 #pragma once
 
+#ifdef ESP_PLATFORM
+#include "internal/espidf_compat.h"
+#else
 #include <Arduino.h>
+#endif
 
 // some platforms do not come with STL or properly defined one, specifically functional
 // if you see...
@@ -80,10 +84,12 @@ License along with NeoPixel.  If not, see
 #include "internal/NeoEase.h"
 #include "internal/NeoGamma.h"
 
+#ifndef ESP_PLATFORM
 #include "internal/DotStarGenericMethod.h"
 #include "internal/Lpd8806GenericMethod.h"
 #include "internal/Ws2801GenericMethod.h"
 #include "internal/P9813GenericMethod.h"
+#endif
 
 #if defined(ARDUINO_ARCH_ESP8266)
 

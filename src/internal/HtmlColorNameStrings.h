@@ -26,7 +26,11 @@ License along with NeoPixel.  If not, see
 
 #pragma once
 
+#ifdef ESP_PLATFORM
+#include "internal/espidf_compat.h"
+#else
 #include <Arduino.h>
+#endif
 
 /* HTML4 color names */
 extern const char c_HtmlNameAqua[] PROGMEM;

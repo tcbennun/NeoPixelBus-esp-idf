@@ -24,7 +24,12 @@ License along with NeoPixel.  If not, see
 <http://www.gnu.org/licenses/>.
 -------------------------------------------------------------------------*/
 
+#ifdef ESP_PLATFORM
+#include "internal/espidf_compat.h"
+#else
 #include <Arduino.h>
+#endif
+
 #include "NeoPixelBus.h"
 
 const uint8_t NeoGammaTableMethod::_table[] = {
