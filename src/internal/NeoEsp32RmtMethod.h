@@ -29,6 +29,12 @@ License along with NeoPixel.  If not, see
 
 #pragma once
 
+#ifdef ESP_PLATFORM
+#include "internal/espidf_compat.h"
+#else
+#include <Arduino.h>
+#endif
+
 #ifdef ARDUINO_ARCH_ESP32
 
 /*  General Reference documentation for the APIs used in this implementation
@@ -42,12 +48,6 @@ NOTE: https://github.com/espressif/arduino-esp32/commit/50d142950d229b8fabca9b74
 Esp32-hal-rmt.h
 Esp32-hal-rmt.c
 */
-
-#ifdef ESP_PLATFORM
-#include "internal/espidf_compat.h"
-#else
-#include <Arduino.h>
-#endif
 
 extern "C"
 {

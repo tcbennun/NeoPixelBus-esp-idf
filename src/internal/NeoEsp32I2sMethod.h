@@ -26,16 +26,16 @@ License along with NeoPixel.  If not, see
 
 #pragma once
 
-#ifdef ARDUINO_ARCH_ESP32
-
-extern "C"
-{
 #ifdef ESP_PLATFORM
 #include "internal/espidf_compat.h"
 #else
 #include <Arduino.h>
 #endif
 
+#ifdef ARDUINO_ARCH_ESP32
+
+extern "C"
+{
 #include "Esp32_i2s.h"
 }
 
